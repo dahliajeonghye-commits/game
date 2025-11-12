@@ -23,11 +23,15 @@ fridge_size = 60
 dooly_img = pygame.image.load("./images/dooly.png")
 gogildong_img = pygame.image.load("./images/go.png")
 ref_img = pygame.image.load("./images/ref.png")
+background_img = pygame.image.load("./images/back.png")
+
+
 
 # 크기 조절 (선택)
-dooly_img = pygame.transform.scale(dooly_img, (50, 50))
-gogildong_img = pygame.transform.scale(gogildong_img, (50, 50))
-ref_img = pygame.transform.scale(ref_img, (50, 50))
+dooly_img = pygame.transform.scale(dooly_img, (100, 100))
+gogildong_img = pygame.transform.scale(gogildong_img, (120, 120))
+ref_img = pygame.transform.scale(ref_img, (150, 150))
+background_img = pygame.transform.scale(background_img, (800, 600))
 
 player_pos = [100, 100]
 enemy_pos = [WIDTH - 100, HEIGHT - 100]
@@ -61,7 +65,7 @@ def check_collision(pos1, size1, pos2, size2):
 # 게임 루프
 running = True
 while running:
-    screen.fill(WHITE)
+    screen.blit(background_img, (0, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
